@@ -1,0 +1,33 @@
+.container-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  width: 450px;
+  border-radius: 10px;
+  border: none;
+  box-shadow: 2px 2px 8px grey;
+  padding: 10px;
+}
+.btn-check {
+  box-sizing: border-box;
+  border: none;
+  color: white;
+}
+.check {
+  margin: 0;
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+}
+.trash {
+  width: 40px;
+  height: 40px;
+  margin-right: 10px;
+}
+.task {
+  margin: 0;
+  font-size: 1.5em;
+  padding-left: 3px;
+  padding-right: 3px;
+}

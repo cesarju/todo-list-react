@@ -1,0 +1,21 @@
+.container-btn {
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  left: 50%;
+  top: 85%;
+}
+
+.btn-plus {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  font-size: 50px;
+  padding: 0;
+  text-align: center;
+  align-items: center;
+  background: #076aff;
+  border: none;
+  color: white;
+}
