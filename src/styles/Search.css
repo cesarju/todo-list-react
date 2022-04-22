@@ -6,9 +6,11 @@ input {
   padding: 10px 10px;
   padding-right: 80px;
   border-radius: 10px;
-  border: none;
+  border: 0;
   box-shadow: 2px 2px 8px grey;
   margin-left: 10px;
+  width: 30%;
+  outline: none; /* quita el borde resplandor en el campo del input*/
 }
 
 .icon-search {
@@ -18,7 +20,8 @@ input {
 
 .container {
   display: flex;
+
   justify-content: center;
-  margin-left: 50px;
   gap: 10px;
+  width: 100%;
 }

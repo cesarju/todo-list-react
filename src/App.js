@@ -4,34 +4,44 @@ import { TodoSearch } from "./components/TodoSearch";
 import { TodoList } from "./components/TodoList";
 import { CreateTodoButton } from "./components/CreateTodoButton";
 import { TodoItem } from "./components/TodoItem";
+import { useState } from "react";
 import "./App.css";
 
-const todos = [
+const defaultTodos = [
   { text: "Cortar cebolla", complete: false },
-  { text: "Tomar el curso de React Js", complete: false },
+  { text: "Tomar el curso de React Js", complete: true },
   { text: "Llorar con la cebolla", complete: false },
-  { text: "Aprender con react", complete: false },
+  { text: "Aprender con react", complete: true },
   { text: "La funcion map", complete: false },
-  { text: "La funcion map1", complete: false },
-  { text: "La funcion map3", complete: false },
-  { text: "La funcion map4", complete: false },
-  { text: "La funcion map5", complete: false },
-  { text: "La funcion map6", complete: false },
-  { text: "La funcion map7", complete: false },
-  { text: "La funcion map8", complete: false },
-  { text: "La funcion map9", complete: false },
-  { text: "La funcion map10", complete: false },
-  { text: "La funcion map11", complete: false },
 ];
 
 function App() {
+  const [todos, setTodos] = useState(defaultTodos);
+  const [valueSearch, setValueSearch] = useState("");
+
+  const completed = todos.filter((element) => !!element.complete).length; //filtrar ciertos elementos con el valor de true !!
+  //console.log(todos.filter((element) => !element.complete));
+  //const completed = todos.filter((todo) => !!todo.complete);
+  const totalTodos = todos.length;
+
+  let searchedTodos = [];
+  if (!valueSearch.length >= 1) {
+    searchedTodos = todos;
+  } else {
+    searchedTodos = todos.filter((element) => {
+      const todoText = element.text.toLowerCase();
+      const searchedText = valueSearch.toLowerCase();
+      return todoText.includes(searchedText);
+    });
+  }
+
   return (
     //envolver con este componente hace que no afecte la UI que es lo que pasa con div
     <React.Fragment>
-      <TodoCounter />
-      <TodoSearch />
+      <TodoCounter todo={totalTodos} completed={completed} />
+      <TodoSearch valueSearch={valueSearch} setValueSearch={setValueSearch} />
       <TodoList>
-        {todos.map((element) => (
+        {searchedTodos.map((element) => (
           <TodoItem key={element.text} text={element.text} />
         ))}
       </TodoList>

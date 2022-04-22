@@ -1,13 +1,29 @@
-.TodoCounter {
+.TodoCounter h2 {
   font-size: 40px;
   text-align: center;
   color: #0e1f55;
   box-sizing: border-box;
   padding: 0;
   font-family: Helvetica, sans-serif;
+  margin: 0;
 }
 
-h3 {
+.TodoCounter h3 {
+  font-size: 40px;
+  text-align: center;
+  color: #0e1f55;
+  box-sizing: border-box;
+  padding: 0;
   margin: 0;
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 15px;
+}
+.TodoCounter h4 {
+  text-align: center;
+  color: #0e1f55;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  margin-bottom: 15px;
 }
